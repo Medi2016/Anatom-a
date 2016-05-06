@@ -1,0 +1,8 @@
+/*para que la barra de navegación no tape el contenido*/
+body { padding-top: 70px; }
+/*Cambiar el color de la barra de arriba */
+/*
+.navbar-inverse {
+  background-color: #3c5aca;
+    border-color: #497bca;
+}*/
