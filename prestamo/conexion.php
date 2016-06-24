@@ -6,7 +6,7 @@ $dbname = "prueba";
 
 // Create connection
 $conexion = new mysqli($servername, $username, $password, $dbname);
-$conexion->set_charset("utf8");
+$conexion->set_charset('utf8');
 //$mysqli_set_charset($conexion,"utf8");
 // Check connection
 if ($conexion->connect_error) {

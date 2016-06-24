@@ -13,7 +13,7 @@ $resultado=$conexion -> query($query);
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -65,8 +65,7 @@ $resultado=$conexion -> query($query);
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="HomeAdm.php">Home</a></li>
-                                <li><a href="#about">Mis prestamos</a></li>
-                                <li><a href="#">Solicitar préstamo</a></li>
+
                                 
                             </ul>
                         <form class="navbar-form navbar-right">
@@ -79,10 +78,26 @@ $resultado=$conexion -> query($query);
                   </div>
                 </div> 
                 <!-- Fin Barra de navegación --> 
-                <form ACTION="" METHOD=POST class="navbar-form navbar-right">
-					<input type="text" name="buscar" >
-					<button type="submit" class="btn btn-success">Buscar</button>
-				</form>
+
+                
+                	<div class="table-responsive">
+	                	<table class="table table-striped">
+		                	<form ACTION="" METHOD=POST class="navbar-form navbar-right">
+		                		<tr>
+									<td><input type="text" name="buscar" ></td>
+								
+									<td><input type="date" id="bd-desde"/></td>
+				            		<td>Hasta</td>
+				            		<td><input type="date" id="bd-hasta"/></td>
+				            		 <td width="200"><a target="_blank" href="javascript:reportePDF();" class="btn btn-danger">Exportar PDF</a></td>
+				            		 <td><button type="submit" class="btn btn-success">Buscar</button></td>
+			            		</tr>
+			            	</form>
+
+		            	</table>
+		            </div>
+					
+				
 
                 <?php	 
                 if(isset($_POST['buscar'])){
