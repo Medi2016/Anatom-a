@@ -65,8 +65,6 @@ $resultado=$conexion -> query($query);
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="HomeAdm.php">Home</a></li>
-
-
 								<li class="dropdown">
               						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Búsquedas<span class="caret"></span></a>
               						<ul class="dropdown-menu">
@@ -75,7 +73,6 @@ $resultado=$conexion -> query($query);
 
               						</ul>
             					</li>
-
                                 
                             </ul>
                         <form class="navbar-form navbar-right">
@@ -94,12 +91,12 @@ $resultado=$conexion -> query($query);
 	                	<table class="table table-striped">
 		                	<form ACTION="" METHOD=POST class="navbar-form navbar-right">
 		                		<tr>
-									<td><input type="text" name="buscar" ></td>
-								
-									<td><input type="date" id="bd-desde"/></td>
-				            		<td>Hasta</td>
-				            		<td><input type="date" id="bd-hasta"/></td>
-				            		 <td width="200"><a target="_blank" href="javascript:reportePDF();" class="btn btn-danger">Exportar PDF</a></td>
+																	
+									<td>Fecha de inicio:<input type="date" name="bd-desde"/></td>
+				            		
+				            		<td>Fecha de final:<input type="date" name="bd-hasta"/></td>
+				            		
+				            		 <td width="200"><a href="exportarpdf.php" class="btn btn-danger">Exportar PDF</a></td>
 				            		 <td><button type="submit" class="btn btn-success">Buscar</button></td>
 			            		</tr>
 			            	</form>
@@ -110,12 +107,15 @@ $resultado=$conexion -> query($query);
 				
 
                 <?php	 
-                if(isset($_POST['buscar'])){
+                if(isset($_POST['bd-desde']) && isset($_POST['bd-hasta'])){
                 ?>
 
                 <?php 
-                $carnet=$_POST['buscar'];
-                $queryIndividual = "SELECT * FROM prestamo WHERE EstudianteIdFK='$carnet' ";
+ 
+                $desde=$_POST['bd-desde'];
+                $hasta=$_POST['bd-hasta'];
+               
+                $queryIndividual = "SELECT * FROM prestamo WHERE Fecha BETWEEN '$desde' AND '$hasta'";
                 
 				$resultadoIndividual=$conexion -> query($queryIndividual);
                 ?>
@@ -173,6 +173,7 @@ $resultado=$conexion -> query($query);
                 ?>
 
 				<div class="table-responsive">
+			
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -208,6 +209,7 @@ $resultado=$conexion -> query($query);
 									<td>
 										<?php echo $row['CursoIdFK'];?>
 									</td>
+
 									<td>
 	                                    <a href="verPrestamo.php?idPrestamo=<?php echo $row['Id'];?>"  role="button" class="label label-info">Ver</a>
 	                                </td>
@@ -219,15 +221,16 @@ $resultado=$conexion -> query($query);
 							<?php } ?>
 						</tbody>
 					</table>
+
+			 	
+
+
 			 	</div>
 				<?php	
 				}
+
 				?>
-
-
-
-
-            
+         
 
         </div>
 

@@ -55,7 +55,14 @@
                                 <li class="active"><a href="home.php">Home</a></li>
                                 <li><a href="misPrestamos.php">Mis prestamos</a></li>
                                 <li><a href="prestamo.php">Solicitar préstamo</a></li>
-                                
+									<li class="dropdown">
+              								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+	              								<ul class="dropdown-menu">
+	                								<li><a href="#">Mi información</a></li>
+	                								<li><a href="#">Cambio de contraseña</a></li>
+
+              									</ul>
+            						</li>
                             </ul>
                         <form class="navbar-form navbar-right">
                         <a href="cerrar.php" class="btn btn-primary" role ="button">Salir</a>

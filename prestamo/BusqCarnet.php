@@ -65,8 +65,6 @@ $resultado=$conexion -> query($query);
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="HomeAdm.php">Home</a></li>
-
-
 								<li class="dropdown">
               						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Búsquedas<span class="caret"></span></a>
               						<ul class="dropdown-menu">
@@ -75,7 +73,6 @@ $resultado=$conexion -> query($query);
 
               						</ul>
             					</li>
-
                                 
                             </ul>
                         <form class="navbar-form navbar-right">
@@ -95,10 +92,7 @@ $resultado=$conexion -> query($query);
 		                	<form ACTION="" METHOD=POST class="navbar-form navbar-right">
 		                		<tr>
 									<td><input type="text" name="buscar" ></td>
-								
-									<td><input type="date" id="bd-desde"/></td>
-				            		<td>Hasta</td>
-				            		<td><input type="date" id="bd-hasta"/></td>
+
 				            		 <td width="200"><a target="_blank" href="javascript:reportePDF();" class="btn btn-danger">Exportar PDF</a></td>
 				            		 <td><button type="submit" class="btn btn-success">Buscar</button></td>
 			            		</tr>

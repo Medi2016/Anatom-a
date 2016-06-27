@@ -61,6 +61,10 @@
                   </form>
 
                 </div><!--/.navbar-collapse -->
+                <div align=right>
+                  <a href="recuperarPass.php"> Recuperar contraseña</a>
+                </div>
+
               </div>
             </nav>
           </div>
