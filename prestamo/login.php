@@ -1,7 +1,7 @@
 <?php
 
 $usuario = $_POST['usuario'];
-$contrasena = $_POST['password'];
+$contrasena = md5($_POST['password']);
 echo $usuario;
 echo $contrasena;
 include('conexion.php');
