@@ -52,7 +52,7 @@
 					$to = $deb_email;
 					$subject = "Recuperación de contraseña";
 					$body = "Esto es un correo automático favor no responder haga click en 
-					el siguiente link: http://localhost/repositorio/prestamo/recuperarPass.php?code=$code&username=$username";
+					el siguiente link: http://localhost:8080/medi/prestamo/recuperarPass.php?code=$code&username=$username";
 					$actualizar ="UPDATE usuarios SET passreset='$code' WHERE usuario='$usuario'";
 					mail($to,$subject,$body);
 					echo "Revise su correo";

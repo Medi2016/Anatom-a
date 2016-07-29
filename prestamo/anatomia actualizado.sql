@@ -1,4 +1,5 @@
-create database Anatomia;
+create database Anatomia CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+create database prueba CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 use Anatomia;
 
 --Tabla Curso
@@ -11,7 +12,7 @@ Create table if not exists `Curso`(
 --Tabla Estudiante
 Create table if not exists `Estudiante`(
    Carnet varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-   Rol varchar(50) DEFAULT 'Estudiante' CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+   Rol varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci  DEFAULT 'Estudiante' NOT NULL,
    Contraseña varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
    NombreEstudiante varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
    Correo varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
@@ -21,12 +22,12 @@ Create table if not exists `Estudiante`(
 --Tabla Articulo
 Create table if not exists `Articulo`(
    Id int(11) not null AUTO_INCREMENT,
-   NombreArticulo varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-   Lugar varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-   Categoria varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+   NombreArticulo varchar(50) CHARSET utf8 COLLATE utf8_spanish_ci NOT NULL,
+   Lugar varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+   Categoria varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
    CONSTRAINT Articulo_pk PRIMARY KEY (Id)
 	
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --Tabla Prestamo
 Create table if not exists `Prestamo`(
