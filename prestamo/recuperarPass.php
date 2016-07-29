@@ -1,7 +1,7 @@
 <?php
 	include('conexion.php');
 	
-	if($_GET['code']){
+	if(isset($_GET['code'])){
 		$get_username = $_GET['username'];
 		$get_code = $_GET['code'];
 		$query = "SELECT * FROM usuarios WHERE usuario='$get_username'";
@@ -29,7 +29,7 @@
 	
 	
 	
-	if(!$_GET['code']){
+	if(!isset($_GET['code'])){
 		echo "
 			<form action='forgot_pass.php' method='POST'>
 			Enter your username <br> <input type ='text' name='ussername'><p>
