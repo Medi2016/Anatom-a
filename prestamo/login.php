@@ -7,10 +7,10 @@ echo $contrasena;
 include('conexion.php');
 
 
-$sqlAdmin = "SELECT * FROM estudiante WHERE Carnet='$usuario' AND Contrasena='$contrasena' AND Rol='Moderador' ";
+$sqlAdmin = "SELECT * FROM estudiante WHERE Carnet='$usuario' AND Contraseña='$contrasena' AND Rol='Moderador' ";
 $admin = $conexion->query($sqlAdmin);
 
-$sql = "SELECT * FROM estudiante WHERE Carnet='$usuario' AND Contrasena='$contrasena' ";
+$sql = "SELECT * FROM estudiante WHERE Carnet='$usuario' AND Contraseña='$contrasena' ";
 $result = $conexion->query($sql);
 
 

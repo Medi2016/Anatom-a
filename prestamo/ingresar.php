@@ -7,7 +7,7 @@ $correo =$_POST['correo'];
 
 
 
-$sql = "INSERT INTO estudiante (Carnet, Contrasena,NombreEstudiante,Correo) VALUES ('$usuario','$contrasena','$nombre','$correo') ";
+$sql = "INSERT INTO estudiante (Carnet, Contraseña,NombreEstudiante,Correo) VALUES ('$usuario','$contrasena','$nombre','$correo') ";
 $result = $conexion->query($sql);
 ?>
 

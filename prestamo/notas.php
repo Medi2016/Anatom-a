@@ -62,7 +62,7 @@
 
                 </div><!--/.navbar-collapse -->
                 <div align=right>
-                  <a href="forgot_pass.php"> Recuperar contraseña</a>
+                  <a href="recuperarPass.php"> Recuperar contraseña</a>
                 </div>
 
               </div>
@@ -73,6 +73,56 @@
 
 		
 		
+		
+		
+
+                    <?php
+                        //include 'conexion.php';
+                        $link = mysql_connect("localhost", "root", null);
+                        mysql_select_db("prueba", $link);
+
+                        $articulos = mysql_query("SELECT * FROM articulo", $link);
+                        $encargados = mysql_query("SELECT * FROM encargado  WHERE id NOT IN ('4')", $link);
+                        $recibido = mysql_query("SELECT * FROM encargado", $link);
+                        $cursos = mysql_query("SELECT * FROM curso", $link);
+                        $num_rows = mysql_num_rows($articulos);
+
+
+
+                       // $query="SELECT * FROM articulo";
+                        //$resultado=$conexion->query($query);
+                    ?>
+                    <?php
+                    date_default_timezone_set("America/Costa_Rica");
+                 
+                    ?>
+                    <div class="row">
+
+                            <div class="col-md-8">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <?php 
+                                        for ($i=0;$i< mysql_num_rows($articulos);$i++)
+                                        {
+                                            $id=mysql_result($articulos,$i,"Id");
+                                            $nombre=mysql_result($articulos,$i,"NombreArticulo");
+                                         ?>   
+                                                <TR>
+                                                        <TD> <?php echo $id ?></TD>
+                                                        <TD><?php echo $nombre ?></TD>
+                                                        <TD><INPUT type='checkbox' name="<?php echo "articulo[$id]"; ?>"></TD>
+                                                        <TD><INPUT type='text' name="<?php echo "cantidad[$id]"; ?>" value="1" size="2"></TD>
+
+                                                                        
+                                                </TR>
+
+                                        <?php 
+                                        }?>     
+                                        
+                                    </TABLE>
+                                </div>
+                            </div>
+                        </div>
 
 PRESTAMO
 
