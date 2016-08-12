@@ -12,6 +12,7 @@
 			$db_username = $row['username'];
 		}
 		if($get_username == $db_username && $get_code == $db_code){
+		
 			echo "
 				<form action='reset_completo.php?code=$get_code' method='POST'>
 					Enter a new password <br> <input type='password' name='newpass'><br>

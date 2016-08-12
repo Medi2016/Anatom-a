@@ -59,7 +59,7 @@
               								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
 	              								<ul class="dropdown-menu">
 	                								<li><a href="#">Mi información</a></li>
-	                								<li><a href="#">Cambio de contraseña</a></li>
+	                								<li><a href="forgot_pass.php">Cambio de contraseña</a></li>
 
               									</ul>
             						</li>
